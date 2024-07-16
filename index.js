@@ -35,7 +35,7 @@ app.get('/jayakarta', (req, res) => {
     res.send('Hello jayakarta!');
 });
 
-// Create data / insert data
+// Insert data / memasukkan data
 app.post('/api/movies', upload.single('foto'), (req, res) => {
     if (req.file) {
         const imgsrc = 'http://localhost:5000/images/' + req.file.filename;
@@ -77,7 +77,7 @@ app.get('/api/movies', (req, res) => {
     });
 });
 
-// delete data / delete data
+// delete data / menghapus data
 app.delete('/api/movies/:id', (req, res) => {
     const id = req.params.id;
     const querySql = 'DELETE FROM movies WHERE id = ?';
